@@ -7,7 +7,9 @@ import os
 app = Flask(__name__)
 model_name = os.environ.get('MODEL_NAME', 'intfloat/multilingual-e5-small')
 
+print("start model loading")
 model = SentenceTransformer(model_name)
+print("finish model loading")
 
 @app.route('/', methods=["GET"])
 def index():
